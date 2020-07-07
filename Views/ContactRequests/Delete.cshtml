@@ -1,0 +1,73 @@
+﻿@model SC_MVC.Models.ContactRequest
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ContactRequest</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.txtName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.txtName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dteDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dteDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.txtEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.txtEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.txtEmailConfirm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.txtEmailConfirm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.txtSubject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.txtSubject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.txtMessage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.txtMessage)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Thanks";
+
+}
+
+
+<div id="SC-page" class="page-wrapper">
+
+    <section class="intro" id="SC-intro">
+        <header role="banner">
+            <h1>Suzanne Collins</h1>
+            <h2>Contact</h2>
+        </header>
+
+        
+
+        <div class="preamble" id="SC-preamble" role="article">
+            <h3>Thanks for your support.</h3>
+            <p>@ViewBag.Participants</p>
+
+
+            <div>
+                @Html.ActionLink("Go Home", "Index", "Home")
+            </div>
+        </div>
+    </section>
+</div>

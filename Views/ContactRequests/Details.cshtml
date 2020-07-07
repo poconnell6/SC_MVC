@@ -1,0 +1,67 @@
+﻿@model SC_MVC.Models.ContactRequest
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ContactRequest</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.txtName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.txtName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dteDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dteDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.txtEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.txtEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.txtEmailConfirm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.txtEmailConfirm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.txtSubject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.txtSubject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.txtMessage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.txtMessage)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.intPrimaryKey }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
