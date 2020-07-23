@@ -32,15 +32,22 @@
             <div class="wrapper">
 
                 <div class="design-selection" id="design-selection">
-                    <h3 class="select">Here:</h3>
+                    
                     <nav role="navigation">
+                        @Html.Partial("_LoginPartial")
 
+                        <h3 class="select">Here:</h3>
                         <li>@Html.ActionLink("Home", "Index", "Home")</li>
                         <li>@Html.ActionLink("Works", "Index", "Works")</li>
                         <li>@Html.ActionLink("Biography", "Biography", "Home")</li>
                         <li>@Html.ActionLink("Interview", "Interview", "Home")</li>
                         <li>@Html.ActionLink("Contact", "Contact", "ContactRequests")</li>
+                        @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                        {
 
+                            <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
+                            <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
+                        }
 
                     </nav>
                 </div>
@@ -76,6 +83,8 @@
                             <a class="design-name" href="http://www.authorsguild.org/">Authors Guild</a>
                         </li>
                     </ul>
+                    
+
                 </div>
 
 

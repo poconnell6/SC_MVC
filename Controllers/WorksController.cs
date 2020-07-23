@@ -12,12 +12,36 @@ namespace SC_MVC.Controllers
 {
     public class WorksController : Controller
     {
+        // we get a new controller for every request as per
+        // https://stackoverflow.com/questions/5425920/asp-net-mvc-is-controller-created-for-every-request 
+        // so we shouldnt have reuse issues here
+        
         private SC_MVC_DBContext db = new SC_MVC_DBContext();
+        
+         
 
         // GET: Works
         public ActionResult Index()
         {
 
+            //pare down the list of books to just sale items
+            //I think this method seems like overkill here but is apparently what is necessary to prevent it whining about type errors
+            List<WorksIndexViewModel> WIVMlist = new List<WorksIndexViewModel>();
+            var salelist = (
+                from saleitems in db.Works
+                where saleitems.IsOnSale == true
+                select new { saleitems.Title, saleitems.Description, saleitems.Genre }
+                ).ToList();
+            foreach (var item in salelist)
+            {
+                WorksIndexViewModel wivm = new WorksIndexViewModel();
+
+                wivm.Title = item.Title;
+                wivm.Description = item.Description;
+                wivm.Genre = item.Genre;
+                WIVMlist.Add(wivm);
+
+            }
             if (HttpContext.Application["bookSaleCounter"] != null)
             {
                 ViewBag.Participants = "People have participated in the current book sale " + HttpContext.Application["bookSaleCounter"] + " times.";
@@ -26,9 +50,9 @@ namespace SC_MVC.Controllers
             {
                ViewBag.Participants = "Don't wait; we have a limited supply of sale items! ";
             }
+            
 
-
-            return View(db.Works.ToList());
+            return View(WIVMlist);
         }
 
         // GET: Works/Details/5
