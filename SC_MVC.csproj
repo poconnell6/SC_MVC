@@ -194,6 +194,10 @@
     <Compile Include="Migrations\202007132236110_works-add-isonsale.designer.cs">
       <DependentUpon>202007132236110_works-add-isonsale.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007242020099_added-pricing-to-books.cs" />
+    <Compile Include="Migrations\202007242020099_added-pricing-to-books.designer.cs">
+      <DependentUpon>202007242020099_added-pricing-to-books.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
@@ -308,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007132236110_works-add-isonsale.resx">
       <DependentUpon>202007132236110_works-add-isonsale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007242020099_added-pricing-to-books.resx">
+      <DependentUpon>202007242020099_added-pricing-to-books.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
