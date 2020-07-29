@@ -178,27 +178,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006161949431_InitialCreate.cs" />
-    <Compile Include="Migrations\202006161949431_InitialCreate.designer.cs">
-      <DependentUpon>202006161949431_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006221658097_beta.cs" />
-    <Compile Include="Migrations\202006221658097_beta.designer.cs">
-      <DependentUpon>202006221658097_beta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007120050525_identity-framework-proto.cs" />
-    <Compile Include="Migrations\202007120050525_identity-framework-proto.designer.cs">
-      <DependentUpon>202007120050525_identity-framework-proto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007132236110_works-add-isonsale.cs" />
-    <Compile Include="Migrations\202007132236110_works-add-isonsale.designer.cs">
-      <DependentUpon>202007132236110_works-add-isonsale.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007242020099_added-pricing-to-books.cs" />
-    <Compile Include="Migrations\202007242020099_added-pricing-to-books.designer.cs">
-      <DependentUpon>202007242020099_added-pricing-to-books.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
     <Compile Include="Models\ContactRequest.cs" />
@@ -211,10 +190,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\sc-mvc-db.mdf" />
-    <Content Include="App_Data\sc-mvc-db_log.ldf">
-      <DependentUpon>sc-mvc-db.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -301,23 +276,6 @@
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006161949431_InitialCreate.resx">
-      <DependentUpon>202006161949431_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006221658097_beta.resx">
-      <DependentUpon>202006221658097_beta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007120050525_identity-framework-proto.resx">
-      <DependentUpon>202007120050525_identity-framework-proto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007132236110_works-add-isonsale.resx">
-      <DependentUpon>202007132236110_works-add-isonsale.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007242020099_added-pricing-to-books.resx">
-      <DependentUpon>202007242020099_added-pricing-to-books.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -330,7 +288,10 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\test\" />
+    <Folder Include="Migrations\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

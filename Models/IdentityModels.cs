@@ -21,7 +21,7 @@ namespace IdentitySample.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("SC_MVC_DBContext", throwIfV1Schema: false)
         {
         }
 
