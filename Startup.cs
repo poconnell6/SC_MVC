@@ -1,6 +1,6 @@
 ﻿using Owin;
 
-namespace IdentitySample
+namespace SC_MVC
 {
     public partial class Startup
     {

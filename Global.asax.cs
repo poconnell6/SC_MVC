@@ -1,4 +1,4 @@
-﻿using IdentitySample.Models;
+﻿using SC_MVC.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

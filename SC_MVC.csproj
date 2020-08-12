@@ -178,6 +178,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008041828019_initial.cs" />
+    <Compile Include="Migrations\202008041828019_initial.designer.cs">
+      <DependentUpon>202008041828019_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
     <Compile Include="Models\ContactRequest.cs" />
@@ -290,7 +295,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\test\" />
-    <Folder Include="Migrations\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202008041828019_initial.resx">
+      <DependentUpon>202008041828019_initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
