@@ -182,6 +182,14 @@
     <Compile Include="Migrations\202008041828019_initial.designer.cs">
       <DependentUpon>202008041828019_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008122149420_DBContext-Merge.cs" />
+    <Compile Include="Migrations\202008122149420_DBContext-Merge.designer.cs">
+      <DependentUpon>202008122149420_DBContext-Merge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009262311048_CustomizeIdentityModel.cs" />
+    <Compile Include="Migrations\202009262311048_CustomizeIdentityModel.designer.cs">
+      <DependentUpon>202009262311048_CustomizeIdentityModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
@@ -299,6 +307,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202008041828019_initial.resx">
       <DependentUpon>202008041828019_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008122149420_DBContext-Merge.resx">
+      <DependentUpon>202008122149420_DBContext-Merge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009262311048_CustomizeIdentityModel.resx">
+      <DependentUpon>202009262311048_CustomizeIdentityModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

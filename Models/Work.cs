@@ -12,15 +12,19 @@ namespace SC_MVC.Models
     {       
     [Key]
         public int PrimaryKey { get; set; }
+
         public string Title { get; set; }
+
+        
         public string Description { get; set; }
+        
         public string Genre { get; set; }
 
         [Column(TypeName = "Money")]
         public decimal Price { get; set; }
+        
         public int PercentDiscountedTo { get; set; }
-
-
+        
         public bool IsOnSale { get; set; }
     }
 

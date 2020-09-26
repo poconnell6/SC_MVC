@@ -12,7 +12,7 @@ namespace SC_MVC.Controllers
 {
     public class ContactRequestsController : Controller
     {
-        private SC_MVC_DBContext db = new SC_MVC_DBContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: ContactRequests
         public ActionResult Index()

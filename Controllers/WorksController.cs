@@ -16,7 +16,7 @@ namespace SC_MVC.Controllers
         // https://stackoverflow.com/questions/5425920/asp-net-mvc-is-controller-created-for-every-request 
         // so we shouldnt have reuse issues here
         
-        private SC_MVC_DBContext db = new SC_MVC_DBContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
         
          
 

@@ -6,9 +6,22 @@ using System.Threading.Tasks;
 
 namespace SC_MVC.Models
 {
-    // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
+    // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://devblogs.microsoft.com/aspnet/customizing-profile-information-in-asp-net-identity-in-vs-2013-templates/ to learn more.
     public class ApplicationUser : IdentityUser
+    //https://docs.microsoft.com/en-us/aspnet/core/security/authentication/customize-identity-model?view=aspnetcore-3.1#custom-user-data
     {
+        // user model exensions
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+
+        public string Address { get; set; }
+        public string State { get; set; }
+        public string City { get; set; }
+        public string Country { get; set; }
+        public string PostalCode { get; set; }
+
+
+        //boilerplate
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -21,7 +34,7 @@ namespace SC_MVC.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("SC_MVC_DBContext", throwIfV1Schema: false)
+            : base("ApplicationDbContext", throwIfV1Schema: false)
         {
 
         }
@@ -37,7 +50,8 @@ namespace SC_MVC.Models
         {
             return new ApplicationDbContext();
         }
-
+        public DbSet<Work> Works { get; set; }
+        public DbSet<ContactRequest> ContactRequests { get; set; }
     }
 
 }
