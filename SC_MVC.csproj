@@ -239,7 +239,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\_Layout - Copy.cshtml" />
+    <Content Include="Views\Shared\_Layout - default.cshtml" />
     <Content Include="Views\Home\Biography.cshtml" />
     <Content Include="Views\Home\Interview.cshtml" />
     <Content Include="Views\Works\Create.cshtml" />
@@ -285,6 +285,7 @@
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
     <Content Include="Views\Account\DisplayEmail.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Shared\_LayoutCustom.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

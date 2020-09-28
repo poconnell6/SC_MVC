@@ -2,81 +2,68 @@
 
 @{
     ViewBag.Title = "Manage Contact Requests";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    
 }
 
+<section class="intro" id="SC-intro">
+
     <div class="summary" id="SC-summary" role="article">
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />       
     </div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.txtName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.dteDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.txtEmail)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.txtEmailConfirm)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.txtSubject)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.txtMessage)
-        </th>
-        <th></th>
-    </tr>
+    <div class="preamble" id="SC-preamble" role="article">
+        <h3>We'd love to hear from you</h3>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.txtName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.dteDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.txtEmail)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.txtEmailConfirm)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.txtSubject)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.txtMessage)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.intPrimaryKey }) |
-                @Html.ActionLink("Details", "Details", new { id = item.intPrimaryKey }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.intPrimaryKey })
-            </td>
-        </tr>
-    }
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.txtName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.dteDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.txtEmail)
+                </th>
 
-</table>
+                <th>
+                    @Html.DisplayNameFor(model => model.txtSubject)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.txtMessage)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.txtName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dteDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.txtEmail)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.txtSubject)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.txtMessage)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.intPrimaryKey }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.intPrimaryKey }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.intPrimaryKey })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</section>

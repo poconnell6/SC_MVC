@@ -297,6 +297,8 @@ section.intro {
         color: #333;
         margin-left: -30%;
         padding: 5% 5% 5% 30%;
+        overflow-x: auto;
+        width: 130%
     }
 
 div.main {

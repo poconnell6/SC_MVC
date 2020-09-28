@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content='Suzanne Collins, Gregor, Gregor the Overlander, Gregor and the Prophecy of Bane, Gregor and the Curse of the Warmbloods, Gregor and the Marks of Secret, Gregor and the Code of Claw, The Underland Chronicles, Underland, Overland, Underlander, Overlander, Bartholomew of Sandwich, When Charlie McButton Lost Power' name='keywords'>
+    <meta content='The Official Suzanne Collins Website' name='description'>
+    <meta name='google-site-verification'>
+    <meta name='date'>
+    <meta name="robots" content="all">
+
+    <script src="http://use.typekit.net/lxq7gid.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
+    <!--[if lt IE 9]>
+    <script src="script/html5shiv.js"></script>
+    <![endif]-->
+
+
+    <title>Suzanne Collins -  @ViewBag.Title</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div>
+        <aside class="sidebar" role="complementary">
+            <div class="wrapper">
+
+                <div class="design-selection" id="design-selection">
+
+                    <nav role="navigation">
+                        @Html.Partial("_LoginPartial")
+
+                        <h3 class="select">Here:</h3>
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Works", "Index", "Works")</li>
+                        <li>@Html.ActionLink("Biography", "Biography", "Home")</li>
+                        <li>@Html.ActionLink("Interview", "Interview", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "ContactRequests")</li>
+                        @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                        {
+
+                            <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
+                            <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
+                        }
+                    </nav>
+                </div>
+
+                <div class="SC-resources" id="SC-resources">
+                    <h3 class="resources">Friends and Associates:</h3>
+                    <ul>
+                        <li>
+                            <a class="design-name" href="http://www.scholastic.com">Scholastic</a>
+                        </li>
+                        <li>
+                            <a class="design-name" href="http://www.penguin.com/">Penguin Group</a>
+                        </li>
+                        <li>
+                            <a class="design-name" href="http://www.npr.org/templates/story/story.php?storyId=4646599">NPR</a>
+                        </li>
+                        <li>
+                            <a class="design-name" href="http://www.randomhouse.com/audio/listeninglibrary/">Listening Library</a>
+                        </li>
+                        <li>
+                            <a class="design-name" href="http://www.indiebound.org/">Indie Bound</a>
+                        </li>
+                        <li>
+                            <a class="design-name" href="http://barnesandnoble.com">Barnes &amp; Noble</a>
+                        </li>
+                        <li>
+                            <a class="design-name" href="http://www.booksamillion.com. ">Books-A-Million</a>
+                        </li>
+                        <li>
+                            <a class="design-name" href="http://amazon.com">Amazon</a>
+                        </li>
+                        <li>
+                            <a class="design-name" href="http://www.authorsguild.org/">Authors Guild</a>
+                        </li>
+                    </ul>
+
+
+                </div>
+
+
+            </div>
+        </aside>
+    </div>
+    <div id="SC-page" class="page-wrapper">
+        <div class="container body-content">
+            <section class="intro" id="SC-intro">
+                <header role="banner">
+                    <h1>Suzanne Collins</h1>
+                    <h2>@ViewBag.Title @ViewBag.Extra</h2>
+                </header>
+            </section>
+            @RenderBody()
+            <hr />
+            <footer>
+                <a href="http://validator.w3.org/check/referer" title="Check the validity of this site&#8217;s HTML" class="SC-validate-html">HTML</a>
+                <a href="http://jigsaw.w3.org/css-validator/check/referer" title="Check the validity of this site&#8217;s CSS" class="SC-validate-css">CSS</a>
+                <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" title="View the Creative Commons license of this site: Attribution-NonCommercial-ShareAlike." class="SC-license">CC</a>
+                <p>&copy; @DateTime.Now.Year - Patrick O'Connell</p>
+            </footer>
+        </div>
+
+    </div>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+</body>
+</html>
