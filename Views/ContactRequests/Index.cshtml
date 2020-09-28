@@ -1,11 +1,28 @@
 ﻿@model IEnumerable<SC_MVC.Models.ContactRequest>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Manage Contact Requests";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+    <div class="summary" id="SC-summary" role="article">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />       
+    </div>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -33,32 +50,33 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.txtName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dteDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.txtEmail)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.txtEmailConfirm)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.txtSubject)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.txtMessage)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.intPrimaryKey }) |
-            @Html.ActionLink("Details", "Details", new { id=item.intPrimaryKey }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.intPrimaryKey })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.txtName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dteDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.txtEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.txtEmailConfirm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.txtSubject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.txtMessage)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.intPrimaryKey }) |
+                @Html.ActionLink("Details", "Details", new { id = item.intPrimaryKey }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.intPrimaryKey })
+            </td>
+        </tr>
+    }
 
 </table>
