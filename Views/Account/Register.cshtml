@@ -4,10 +4,7 @@
 }
 
 
-    <section class="intro" id="SC-intro">
-
-        
-        <div class="preamble" id="SC-preamble" role="article">
+    
             @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
@@ -38,8 +35,7 @@
                     </div>
                 </div>
             }
-        </div>
-    </section>
+  
 
         @section Scripts {
             @Scripts.Render("~/bundles/jqueryval")

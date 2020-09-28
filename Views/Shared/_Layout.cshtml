@@ -93,8 +93,11 @@
                     <h1>Suzanne Collins</h1>
                     <h2>@ViewBag.Title @ViewBag.Extra</h2>
                 </header>
+                <div class="preamble" id="SC-preamble" role="article">
+
+                    @RenderBody()
+                </div>
             </section>
-            @RenderBody()
             <hr />
             <footer>
                 <a href="http://validator.w3.org/check/referer" title="Check the validity of this site&#8217;s HTML" class="SC-validate-html">HTML</a>
@@ -102,9 +105,9 @@
                 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" title="View the Creative Commons license of this site: Attribution-NonCommercial-ShareAlike." class="SC-license">CC</a>
                 <p>&copy; @DateTime.Now.Year - Patrick O'Connell</p>
             </footer>
-        </div>
+            </div>
 
-    </div>
+        </div>
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
         @RenderSection("scripts", required: false)
