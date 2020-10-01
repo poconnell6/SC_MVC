@@ -46,6 +46,8 @@ namespace SC_MVC.Controllers
                 : message == ManageMessageId.Error ? "An error has occurred."
                 : message == ManageMessageId.AddPhoneSuccess ? "The phone number was added."
                 : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number was removed."
+                : message == ManageMessageId.AddAddressSuccess ? "Your shipping information has been updated."
+                : message == ManageMessageId.RemoveAddressSuccess ? "Your shipping information has been removed."
                 : "";
 
             var userId = User.Identity.GetUserId();
@@ -53,6 +55,7 @@ namespace SC_MVC.Controllers
             {
                 HasPassword = HasPassword(),
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
+                Address = GetAddress(),
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
                 Logins = await UserManager.GetLoginsAsync(userId),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
@@ -126,6 +129,40 @@ namespace SC_MVC.Controllers
             }
             return RedirectToAction("VerifyPhoneNumber", new { PhoneNumber = model.Number });
         }
+        //currently under test
+        // GET: /Manage/AddAddress
+        public ActionResult AddAddress()
+        {
+            return View();
+        }
+
+        // POST: /Manage/AddAddress
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddAddress([Bind(Include = "FirstName,LastName,Address,State,City,Country,PostalCode")] AddAddressViewModel addAddressViewModel)
+        {
+            
+            if (ModelState.IsValid)
+            {
+                var user = UserManager.FindById(User.Identity.GetUserId());
+
+                user.FirstName = addAddressViewModel.FirstName;
+                user.LastName = addAddressViewModel.LastName;
+                user.Address = addAddressViewModel.Address;
+                user.State = addAddressViewModel.State;
+                user.City = addAddressViewModel.City;
+                user.Country = addAddressViewModel.Country;
+                user.PostalCode = addAddressViewModel.PostalCode;
+                UserManager.Update(user);
+
+                return RedirectToAction("Index", "Manage", new { Message = ManageMessageId.AddAddressSuccess });
+            }
+
+            return View(addAddressViewModel);
+        }
+
 
         //
         // POST: /Manage/RememberBrowser
@@ -398,14 +435,26 @@ namespace SC_MVC.Controllers
             return false;
         }
 
+        private string GetAddress()
+        {
+            var user = UserManager.FindById(User.Identity.GetUserId());
+            if (user != null)
+            {
+                return user.Address;
+            }
+            return null;
+        }
+
         public enum ManageMessageId
         {
             AddPhoneSuccess,
+            AddAddressSuccess,
             ChangePasswordSuccess,
             SetTwoFactorSuccess,
             SetPasswordSuccess,
             RemoveLoginSuccess,
             RemovePhoneSuccess,
+            RemoveAddressSuccess,
             Error
         }
 

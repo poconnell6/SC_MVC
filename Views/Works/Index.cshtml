@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Works";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutCustom.cshtml";
 }
 
 
@@ -156,20 +156,20 @@
             <p>Check back soon, sales change often!!</p>
         </div>
 
-        <div class="benefits" id="SC-benefits" role="article">
+        @*<div class="benefits" id="SC-benefits" role="article">
             <h3>Click here to participate in the book sale. </h3>
 
              @Html.ActionLink("CLICK ME!", "Increment", null, new { @class="imageBtn" })
 
-            @*' <asp:ImageButton ID="IBtn_BookSale" runat="server"
-                               ' AlternateText="CLICK ME!"
-								 ' ImageAlign="left"
-                               ' ImageUrl="images/ccbgryphon-x_small.gif"
-						         ' OnClick="IBtn_BookSale_Click" />*@
+                                                                                                ' <asp:ImageButton ID="IBtn_BookSale" runat="server"
+                                                                                                                   ' AlternateText="CLICK ME!"
+								                                                                                     ' ImageAlign="left"
+                                                                                                                   ' ImageUrl="images/ccbgryphon-x_small.gif"
+						                                                                                             ' OnClick="IBtn_BookSale_Click" />
             <br />
 
             <p>@ViewBag.Participants</p>
-        </div>
+        </div>*@
 
 
 

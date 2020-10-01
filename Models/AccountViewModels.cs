@@ -2,6 +2,9 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace SC_MVC.Models
+
+
+//https://devblogs.microsoft.com/aspnet/customizing-profile-information-in-asp-net-identity-in-vs-2013-templates/
 {
     public class ExternalLoginConfirmationViewModel
     {
@@ -65,6 +68,16 @@ namespace SC_MVC.Models
     public class RegisterViewModel
     {
         [Required]
+        [StringLength(85)]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+        
+        [Required]
+        [StringLength(85)]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -79,6 +92,37 @@ namespace SC_MVC.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+
+
+        //this is in principle internationalized on on the backend, but i don't realy care on the front end right now... 
+        [Required]
+        [Display(Name = "Street Address")]
+        [StringLength(85)]
+        public string Address { get; set; }
+
+        [Required]
+        [StringLength(2, MinimumLength = 2, ErrorMessage = "Please use 2-letter state code.")]
+        [Display(Name = "State")]
+        public string State { get; set; }
+
+        [Required]
+        [StringLength(85)]
+        [Display(Name = "City")]
+        public string City { get; set; }
+
+        [Required]
+        [StringLength(85)]
+        [Display(Name = "Country")]
+        public string Country { get; set; } = "US";
+        //https://stackoverflow.com/questions/23823103/default-value-in-mvc-model-using-data-annotation
+
+        [Required]
+        [DataType(DataType.PostalCode)]
+        [RegularExpression(@"^\d{5}(-\d{4})?$", ErrorMessage = "Invalid Zip")]
+        [Display(Name = "Zip Code")]
+        public string PostalCode { get; set; }
+
     }
 
     public class ResetPasswordViewModel

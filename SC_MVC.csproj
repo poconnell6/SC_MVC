@@ -286,6 +286,7 @@
     <Content Include="Views\Account\DisplayEmail.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Shared\_LayoutCustom.cshtml" />
+    <Content Include="Views\Manage\AddAddress.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

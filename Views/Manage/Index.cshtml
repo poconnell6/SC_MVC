@@ -27,6 +27,20 @@
                     ]
                 </p>
                 <p>
+                    Shipping Address: @(Model.Address ?? "None") [
+                    @if (Model.Address != null)
+                    {
+                        @Html.ActionLink("Change", "AddAddress")
+                        @: &nbsp;|&nbsp;
+                        @Html.ActionLink("Remove", "RemoveAddress")
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Add", "AddAddress")
+                    }
+                    ]
+                </p>
+                <p>
                     External Logins: @Model.Logins.Count
                     @Html.ActionLink("[Manage]", "ManageLogins")
                 </p>
