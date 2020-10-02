@@ -52,6 +52,9 @@ namespace SC_MVC.Models
         }
         public DbSet<Work> Works { get; set; }
         public DbSet<ContactRequest> ContactRequests { get; set; }
+
+        public DbSet<Cart> Cart { get; set; }
+
     }
 
 }

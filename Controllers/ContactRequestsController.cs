@@ -10,6 +10,8 @@ using SC_MVC.Models;
 
 namespace SC_MVC.Controllers
 {
+    [Authorize(Roles = "Admin")]
+
     public class ContactRequestsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -34,7 +36,7 @@ namespace SC_MVC.Controllers
             }
             return View(contactRequest);
         }
-
+        [AllowAnonymous]
         // GET: ContactRequests/Contact
         public ActionResult Contact()
         {
@@ -46,6 +48,7 @@ namespace SC_MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public ActionResult Contact([Bind(Include = "intPrimaryKey,txtName,dteDate,txtEmail,txtEmailConfirm,txtSubject,txtMessage")] ContactRequest contactRequest)
         {
             if (ModelState.IsValid)

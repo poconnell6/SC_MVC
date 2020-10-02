@@ -129,7 +129,7 @@ namespace SC_MVC.Controllers
             }
             return RedirectToAction("VerifyPhoneNumber", new { PhoneNumber = model.Number });
         }
-        //currently under test
+       
         // GET: /Manage/AddAddress
         public ActionResult AddAddress()
         {

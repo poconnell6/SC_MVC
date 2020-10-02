@@ -190,9 +190,22 @@
     <Compile Include="Migrations\202009262311048_CustomizeIdentityModel.designer.cs">
       <DependentUpon>202009262311048_CustomizeIdentityModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010011947367_AddCartTable.cs" />
+    <Compile Include="Migrations\202010011947367_AddCartTable.designer.cs">
+      <DependentUpon>202010011947367_AddCartTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010012106019_DropNumOrderedFromCartTable.cs" />
+    <Compile Include="Migrations\202010012106019_DropNumOrderedFromCartTable.designer.cs">
+      <DependentUpon>202010012106019_DropNumOrderedFromCartTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010012110283_InstantiateCart.cs" />
+    <Compile Include="Migrations\202010012110283_InstantiateCart.designer.cs">
+      <DependentUpon>202010012110283_InstantiateCart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\ContactRequest.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -313,6 +326,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009262311048_CustomizeIdentityModel.resx">
       <DependentUpon>202009262311048_CustomizeIdentityModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010011947367_AddCartTable.resx">
+      <DependentUpon>202010011947367_AddCartTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010012106019_DropNumOrderedFromCartTable.resx">
+      <DependentUpon>202010012106019_DropNumOrderedFromCartTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010012110283_InstantiateCart.resx">
+      <DependentUpon>202010012110283_InstantiateCart.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

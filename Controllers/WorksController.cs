@@ -10,6 +10,7 @@ using SC_MVC.Models;
 
 namespace SC_MVC.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class WorksController : Controller
     {
         // we get a new controller for every request as per
@@ -17,10 +18,11 @@ namespace SC_MVC.Controllers
         // so we shouldnt have reuse issues here
         
         private ApplicationDbContext db = new ApplicationDbContext();
-        
-         
+
+
 
         // GET: Works
+        [AllowAnonymous]
         public ActionResult Index()
         {
 
@@ -42,18 +44,20 @@ namespace SC_MVC.Controllers
                 WIVMlist.Add(wivm);
 
             }
-            if (HttpContext.Application["bookSaleCounter"] != null)
-            {
-                ViewBag.Participants = "People have participated in the current book sale " + HttpContext.Application["bookSaleCounter"] + " times.";
-            }
-            else
-            {
-               ViewBag.Participants = "Don't wait; we have a limited supply of sale items! ";
-            }
+            //if (HttpContext.Application["bookSaleCounter"] != null)
+            //{
+            //    ViewBag.Participants = "People have participated in the current book sale " + HttpContext.Application["bookSaleCounter"] + " times.";
+            //}
+            //else
+            //{
+            //   ViewBag.Participants = "Don't wait; we have a limited supply of sale items! ";
+            //}
             
 
-            return View(WIVMlist);
+            return View(WIVMlist); 
         }
+
+        // works post will need  [AllowAnonymous] and if user !=null allow post else redirect to login. (popoup message?)
 
         // GET: Works/Details/5
         public ActionResult Details(int? id)
